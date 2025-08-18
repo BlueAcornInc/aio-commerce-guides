@@ -59,3 +59,7 @@ As you can see, Adobe provides an `aio-apps-action` that can handle authenticati
 These must be fetched, and leverage the Oauth Server-to-Server (oauth-sts) authentication method.
 
 ![Where to pull oauth-sts credentials](img/oauth-sts-config.png)
+
+### Note about Deploying API Mesh
+
+API Mesh uses a different deployment mechanism and requires a different auth flow
