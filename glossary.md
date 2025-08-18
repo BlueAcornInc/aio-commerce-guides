@@ -1,4 +1,4 @@
-# Glossary of Terms
+# Glossary
 
 Adobe has made all this super confusing, and here at Blue Acorn we have some internal short-hand to add to the confusion. So here is a glossary of terms to clear things up!
 
