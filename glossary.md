@@ -18,7 +18,13 @@ Adobe has made all this super confusing, and here at Blue Acorn we have some int
 
 **EDS Commerce Drop-in Components** A specific set of drop-ins for Adobe Commerce Storefornt, here's the general selection [here](https://experienceleague.adobe.com/developer/commerce/storefront/dropins/all/introduction/)
 
-**Document-based Authoring** is a way that EDS can 
+**Document-based Authoring** is a content reposotory style supported by EDS. This is where content is stored in the form of Documents and Sheets in either Google Drive, Microsoft Sharepoint or Adobe's Document Author. A share link to the content repo is added to the EDS' `fstab.yaml`, this is the default deployment setup for most EDS sites. 
+
+**Code Repository** refers to a Github repo that manages an EDS instance. In the Adobe ecosystem, we delinate between Code and Content repositories, where a code repository can drive many content repositories. 
+
+**Content Repository** refers to any kind of content backend that can provide content and configuration to an EDS site. This incldues Document-based authoring, Universal Editor Service, or AEM Classic. 
+
+**Dark Alley** or **Adobe Author** is an Adobe codename for their content repository [da.live](https://da.live/), a content repository for Adode Edge Delivery Services. **da.live** is where Adobe's starter content is hosted, and can be used to manage content for an EDS site.
 
 **Universal Editor** is an in-context content editor that allows Edge Delivery Services to have a nice drag-and-drop content authoring experience, just like *AEM Classic*.
 
@@ -28,7 +34,6 @@ Adobe has made all this super confusing, and here at Blue Acorn we have some int
 
 **Magento Open Source** is a community-driven platform supported by Adobe, is is the *PHP Application* that is the foundation for *Adobe Commerce* and shares most of it's capabilitites. It is not compatibile with *App Builder* and requires *In Process Extensibility*.
 
-
 **Commerce App** refers to any App Builder "app" that is designed for Adobe Commerce, be it by plugging into one of the Out of Process capabilities like Payments, Shipping or Taxes, or by developing something like a Storefront Block which leverages app builder.
 
 **Admin Apps** is a term I will use throughout this guide. It refers to a class of App Builder app that uses the **Admin UI SDK extension points** to present infomration in the Adobe Commerce admin. This is one of the primary use-cases for App Builder.
@@ -36,3 +41,5 @@ Adobe has made all this super confusing, and here at Blue Acorn we have some int
 **Out-of-Process Extensibility** or **OOPE** is the recommended approach for extending Adobe Commerce in a scalable, secure, and maintainable way. Instead of modifying the core PHP application directly, developers use **Adobe Developer App Builder** and external services to integrate new capabilities (such as Payments, Shipping, Taxes, or Storefront Blocks). This keeps the Adobe Commerce core immutable, reduces upgrade friction, and promotes modern cloud-native practices. OOPE is intended to be the long-term strategy for Adobe Commerce development, and is required for *SaaS* development. 
 
 **In-Process Extensibility** or **IPE** is the traditional method of extending Adobe Commerce PaaS or Magento Open Source by directly modifying or adding to the core PHP application. This often includes custom modules, plugins, and observers that run within the same process as the platform itself. While still widely used, IPE can introduce upgrade complexity, security risks, and maintenance challenges. Adobe’s long-term strategy is to reduce reliance on IPE in favor of **Out-of-Process Extensibility (OOPE)**, but it remains necessary for Magento Open Source and some legacy use cases.
+
+**Adobe Commerce Optimizer** is a seperate offering from Adobe Commerce or Storefront, but is complimentary. It's designed to provide Catalog Indexing and search capabiltiities to any storefront, expanding beyond just Adobe Commerce, but it uses EDS and Catalog Services and can be framed as a Commerce head in it's own right. 
