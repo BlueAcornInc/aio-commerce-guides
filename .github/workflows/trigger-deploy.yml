@@ -19,4 +19,12 @@ jobs:
           token: ${{ secrets.DEPLOY_TRIGGER_TOKEN }}
           repository: BlueAcornInc/aio-commerce-apps
           event-type: release-trigger
-          client-payload: ${{ toJSON(fromJSON(format('{"repository":"{0}","tag":"{1}","release_url":"{2}","package_name":"{3}","sha":"{4}","commit_message":"{5}"}', github.repository, github.ref_name, github.event.head_commit.url, github.event.repository.name, github.sha, github.event.head_commit.message))) }}
+          client-payload: |
+            {
+              "repository": ${{ toJSON(github.repository) }},
+              "tag": ${{ toJSON(github.ref_name) }},
+              "release_url": ${{ toJSON(github.event.head_commit.url) }},
+              "package_name": ${{ toJSON(github.event.repository.name) }},
+              "sha": ${{ toJSON(github.sha) }},
+              "commit_message": ${{ toJSON(github.event.head_commit.message) }}
+            }
