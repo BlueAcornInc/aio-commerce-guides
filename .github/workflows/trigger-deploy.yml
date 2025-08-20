@@ -13,7 +13,7 @@ jobs:
       - name: Trigger deployment in main repo
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.DEPLOY_TRIGGER_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           repository: blueacorninc/aio-commerce-apps
           event-type: release-trigger
           client-payload: |
