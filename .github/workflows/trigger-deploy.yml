@@ -4,6 +4,9 @@ on:
   #   types: [published]
   push:
     branches: ["main"]
+    paths:
+      - '**.md'
+      - '**.markdown'
 
 jobs:
   trigger-deployment:
