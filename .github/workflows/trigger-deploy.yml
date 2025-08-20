@@ -1,0 +1,26 @@
+name: Trigger Docs Deployment
+on:
+  # release:
+  #   types: [published]
+  push:
+    branches: ["main"]
+
+jobs:
+  trigger-deployment:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Trigger deployment in main repo
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.DEPLOY_TRIGGER_TOKEN }}
+          repository: blueacorninc/aio-commerce-apps
+          event-type: release-trigger
+          client-payload: |
+            {
+              "repository": "${{ github.repository }}",
+              "tag": "${{ github.event.release.tag_name }}",
+              "release_url": "${{ github.event.release.html_url }}",
+              "package_name": "${{ github.event.repository.name }}",
+              "sha": "${{ github.sha }}"
+            }
