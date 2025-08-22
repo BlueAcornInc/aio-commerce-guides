@@ -85,6 +85,8 @@ curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_S
 
 # Commerce Integration Sync
 
+These are dangerous commands that should sync a new catalog to an existing data space. Please use with care, and test after use!
+
 ```bash
 bin/magento saas:resync --feed productattributes --cleanup-feed
 bin/magento saas:resync --feed products --cleanup-feed
@@ -96,3 +98,5 @@ bin/magento saas:resync --feed variants --cleanup-feed
 bin/magento saas:resync --feed categories --cleanup-feed
 bin/magento saas:resync --feed categoryPermissions --cleanup-feed
 ```
+
+Data space issues are difficult to resolve without opening a ticket, if you get in a bind reach out to Adobe!
